@@ -1,0 +1,48 @@
+GMAIL SETUP GUIDE
+=================
+
+Since Resend is not working, let's switch to Gmail for testing.
+
+STEP 1: Update your .env file
+=============================
+
+Replace your current email settings in server/.env with:
+
+# Email Configuration (Gmail)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-gmail@gmail.com
+SMTP_PASS=your-16-digit-app-password
+SMTP_FROM=your-gmail@gmail.com
+
+STEP 2: Set up Gmail App Password
+=================================
+
+1. Go to your Google Account settings
+2. Enable 2-Factor Authentication
+3. Go to Security → App passwords
+4. Generate a new app password for "Mail"
+5. Use that 16-digit password in SMTP_PASS
+
+STEP 3: Restart Server
+======================
+
+After updating .env, restart your server:
+npm run dev
+
+STEP 4: Test Email
+==================
+
+1. Register a new account
+2. Check your Gmail for the OTP code
+3. Enter the code to verify your email
+
+ALTERNATIVE: Keep Using Terminal OTP
+====================================
+
+If you don't want to set up Gmail, you can continue using the terminal OTP method:
+- OTP codes will be displayed in the terminal
+- No email setup required
+- Perfect for development
+
+

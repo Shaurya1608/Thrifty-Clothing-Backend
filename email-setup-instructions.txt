@@ -1,0 +1,64 @@
+EMAIL SETUP INSTRUCTIONS
+========================
+
+To receive actual emails, you need to configure SMTP settings.
+
+STEP 1: Create .env file in server folder
+========================================
+
+Create a file called ".env" in your server folder with these settings:
+
+# Database Configuration
+MONGODB_URI=mongodb://localhost:27017/thrifty_clothings
+JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
+
+# Email Configuration (Gmail)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-16-digit-app-password
+SMTP_FROM=your-email@gmail.com
+
+# Client URL
+CLIENT_URL=http://localhost:3000
+
+# Environment
+NODE_ENV=development
+
+STEP 2: Set up Gmail App Password
+=================================
+
+1. Go to your Google Account settings
+2. Enable 2-Factor Authentication
+3. Go to Security → App passwords
+4. Generate a new app password for "Mail"
+5. Use that 16-digit password in SMTP_PASS
+
+STEP 3: Restart Your Server
+===========================
+
+After creating the .env file, restart your server:
+npm run dev
+
+STEP 4: Test Registration
+=========================
+
+1. Register a new account
+2. Check your email for the OTP code
+3. Enter the code to verify your email
+
+ALTERNATIVE: Use Resend.com
+==========================
+
+If Gmail doesn't work, try Resend.com:
+1. Sign up at resend.com
+2. Get your API key
+3. Use these settings:
+
+SMTP_HOST=smtp.resend.com
+SMTP_PORT=587
+SMTP_USER=resend
+SMTP_PASS=re_YOUR_API_KEY_HERE
+SMTP_FROM=onboarding@resend.dev
+
+
