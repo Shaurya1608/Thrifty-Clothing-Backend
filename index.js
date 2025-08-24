@@ -15,7 +15,7 @@ app.use(helmet());
 app.use(compression());
 app.use(morgan('combined'));
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: ['http://localhost:3000', 'https://thrifty-clothing-frontend.vercel.app', process.env.CLIENT_URL].filter(Boolean),
   credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));
